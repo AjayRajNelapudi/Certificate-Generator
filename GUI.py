@@ -1,33 +1,74 @@
 from tkinter import *
-import generator
+from tkinter import messagebox
+import certificates
 
 def generate_certificates():
-    certificate = certificate_entry.get()
+    template = certificate_entry.get()
     participants = participants_entry.get()
-    generator.generate_certificates(certificate, participants)
+    target_dir = target_dir_entry.get()
 
-    status = Label(window, text = 'Check your directory')
-    status.pack()
+    try:
+        gen = certificates.Certificate_Generator(template, participants)
+        gen.extract_contestants_data([(265, 425), (508, 395)])
+        gen.make_certificates()
+        gen.save_all(target_dir)
+    except:
+        pass
+        #open a dialog box and display the error message here
 
+
+    messagebox.showinfo('Status', 'Please check ' + target_dir)
+
+def open_filedialog(filepath):
+    from tkinter import Tk
+    from tkinter.filedialog import askopenfilename
+
+    Tk().withdraw()
+    filepath.set(askopenfilename())
+
+def open_dirdialog(filepath):
+    from tkinter import Tk
+    from tkinter.filedialog import askdirectory
+
+    Tk().withdraw()
+    filepath.set(askdirectory())
 
 window = Tk()
 window.title('CSI Certificate Generator')
-window.geometry('200x200')
-window.resizable(width = False, height = False)
+window.geometry('700x400')
 
-certificate_label = Label(window, text = 'Enter Certificate Template')
-certificate_label.pack()
+certificate_label = Label(window, text = 'Template')
+certificate_label.place(x = 50, y = 50, width = 100, height = 50)
 
-certificate_entry = Entry(window)
-certificate_entry.pack()
+certificate_entry_var = StringVar()
+certificate_entry = Entry(window, textvar = certificate_entry_var)
+certificate_entry.place(x = 200, y = 50, width = 300, height = 50)
 
-participants_label = Label(window, text = 'Enter Participants File')
-participants_label.pack()
+certificate_filedialog = Button(window, text = 'Select', command = lambda :open_filedialog(certificate_entry_var))
+certificate_filedialog.place(x = 550, y = 50, width = 100, height = 50)
 
-participants_entry  = Entry(window)
-participants_entry.pack()
+participants_label = Label(window, text = 'Participants')
+participants_label.place(x = 50, y = 120, width = 100, height = 50)
 
-generate_button = Button(window, text = 'Make Certificates', command = generate_certificates)
-generate_button.pack()
+participants_entry_var = StringVar()
+participants_entry  = Entry(window, textvar = participants_entry_var)
+participants_entry.place(x = 200, y = 120, width = 300, height = 50)
+
+
+participants_filedialog = Button(window, text = 'Select', command = lambda :open_filedialog(participants_entry_var))
+participants_filedialog.place(x = 550, y = 120, width = 100, height = 50)
+
+target_dir_label = Label(window, text = 'Target Dir')
+target_dir_label.place(x = 50, y = 190, width = 100, height = 50)
+
+target_dir_entry_var = StringVar()
+target_dir_entry = Entry(window, textvar = target_dir_entry_var)
+target_dir_entry.place(x = 200, y = 190, width = 300, height = 50)
+
+target_dir_filedialog = Button(window, text = 'Select', command = lambda :open_dirdialog(target_dir_entry_var))
+target_dir_filedialog.place(x = 550, y = 190, width = 100, height = 50)
+
+generate_button = Button(window, text = 'Generate Certificates', command = generate_certificates)
+generate_button.place(x = 250, y = 260, width = 200, height = 50)
 
 window.mainloop()

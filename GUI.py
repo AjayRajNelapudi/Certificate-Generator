@@ -44,7 +44,7 @@ def open_dirdialog(filepath):
     filepath.set(askdirectory())
 
 window = Tk()
-window.title('CSI Certificate Generator')
+window.title('Cursors Certificate Generator')
 window.geometry('700x400')
 
 certificate_label = Label(window, text = 'Template')
@@ -82,6 +82,9 @@ set_points_button = Button(window, text = 'Set Points', command = set_points)
 set_points_button.place(x = 250, y = 260, width = 200, height = 50)
 
 generate_button = Button(window, text = 'Generate Certificates', command = generate_certificates)
-generate_button.place(x = 250, y = 340, width = 200, height = 50)
+generate_button.place(x = 250, y = 300, width = 200, height = 50)
+
+masthead = Label(window, text = 'Designed & Developed by Ajay Raj Nelapudi')
+masthead.place(x = 200, y = 340, width = 300, height = 50)
 
 window.mainloop()

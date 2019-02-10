@@ -7,7 +7,7 @@ class Mouse_Click_Capture:
 
     def capture_clicks(self, event, x, y, flags, param):
         if event == cv.EVENT_LBUTTONDBLCLK:
-            self.points.append((x, y))
+            self.points.append((x, y + 15))
             cv.line(self.template, (x, y), (x, y + 25), (0, 0, 0), 2)
 
     def capture(self):

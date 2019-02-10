@@ -1,6 +1,16 @@
 from tkinter import *
 from tkinter import messagebox
 import certificates
+import placetext
+
+points = None
+
+def set_points():
+    template = certificate_entry.get()
+    points_capture = placetext.Mouse_Click_Capture(template)
+    points_capture.capture()
+    global points
+    points = points_capture.points
 
 def generate_certificates():
     template = certificate_entry.get()
@@ -8,14 +18,14 @@ def generate_certificates():
     target_dir = target_dir_entry.get()
 
     try:
+        global points
         gen = certificates.Certificate_Generator(template, participants)
-        gen.extract_contestants_data([(265, 425), (508, 395)])
+        gen.extract_contestants_data(points)
         gen.make_certificates()
         gen.save_all(target_dir)
     except:
         pass
         #open a dialog box and display the error message here
-
 
     messagebox.showinfo('Status', 'Please check ' + target_dir)
 
@@ -68,7 +78,10 @@ target_dir_entry.place(x = 200, y = 190, width = 300, height = 50)
 target_dir_filedialog = Button(window, text = 'Select', command = lambda :open_dirdialog(target_dir_entry_var))
 target_dir_filedialog.place(x = 550, y = 190, width = 100, height = 50)
 
+set_points_button = Button(window, text = 'Set Points', command = set_points)
+set_points_button.place(x = 250, y = 260, width = 200, height = 50)
+
 generate_button = Button(window, text = 'Generate Certificates', command = generate_certificates)
-generate_button.place(x = 250, y = 260, width = 200, height = 50)
+generate_button.place(x = 250, y = 340, width = 200, height = 50)
 
 window.mainloop()

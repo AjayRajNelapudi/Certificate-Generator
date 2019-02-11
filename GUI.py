@@ -25,7 +25,7 @@ def generate_certificates():
         gen.save_all(target_dir)
     except:
         pass
-        #open a dialog box and display the error message here
+        # open a dialog box and display the error message here
 
     messagebox.showinfo('Status', 'Please check ' + target_dir)
 
@@ -61,9 +61,8 @@ participants_label = Label(window, text = 'Participants')
 participants_label.place(x = 50, y = 120, width = 100, height = 50)
 
 participants_entry_var = StringVar()
-participants_entry  = Entry(window, textvar = participants_entry_var)
+participants_entry = Entry(window, textvar = participants_entry_var)
 participants_entry.place(x = 200, y = 120, width = 300, height = 50)
-
 
 participants_filedialog = Button(window, text = 'Select', command = lambda :open_filedialog(participants_entry_var))
 participants_filedialog.place(x = 550, y = 120, width = 100, height = 50)

@@ -48,16 +48,24 @@ class Email_Sender:
     def send_all_emails(self):
         for id, email in self.id_email:
             certificate_path = self.target_dir + "/" + id + ".pdf"
+            if "@" in email and email.index("@") != len(email) - 1:
+                email_id = email[:]
+            else:
+                email_id = email + "@gmail.com"
+
             try:
-                self.send_email(email, certificate_path)
-                print("Email sent to", email)
+                self.send_email(email_id, certificate_path)
+                print("Email successfully sent to", email)
             except:
-                print("Email to", email, "failed")
+                print("Email to", email_id, "failed")
 
     def __del__(self):
         self.server.quit()
 
 
-'''emailer = Email_Sender("/Users/ajayraj/Documents/CSI/CertificateGenerator/Target", "/Users/ajayraj/Documents/CSI/CertificateGenerator/sample.csv")
+'''
+SAMPLE CALLS
+emailer = Email_Sender("/Users/ajayraj/Documents/CSI/CertificateGenerator/Target", "/Users/ajayraj/Documents/CSI/CertificateGenerator/sample.csv")
 emailer.read_id_email()
-emailer.send_all_emails()'''
+emailer.send_all_emails()
+'''

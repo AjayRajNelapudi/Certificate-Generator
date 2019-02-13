@@ -48,7 +48,7 @@ class Email_Sender:
     def send_all_emails(self):
         for id, email in self.id_email:
             certificate_path = self.target_dir + "/" + id + ".pdf"
-            if "@" in email and email.index("@") != len(email) - 1:
+            if "@anits.edu.in" in email:#"@" in email and email.index("@") != len(email) - 1:
                 email_id = email[:]
             else:
                 email_id = email + "@gmail.com"

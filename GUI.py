@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import certificates
 import placetext
+import mailer
 
 points = None
 
@@ -29,6 +30,16 @@ def generate_certificates():
 
     messagebox.showinfo('Status', 'Please check ' + target_dir)
 
+def email_certificates():
+    target_dir = target_dir_entry.get()
+    mailing_list = mailing_list_entry.get()
+
+    emailer = mailer.Email_Sender(target_dir, mailing_list)
+    emailer.read_id_email()
+    emailer.send_all_emails()
+
+    messagebox.showinfo('Status', 'Certificates emailed. Please check your sent mailbox')
+
 def open_filedialog(filepath):
     from tkinter import Tk
     from tkinter.filedialog import askopenfilename
@@ -45,7 +56,7 @@ def open_dirdialog(filepath):
 
 window = Tk()
 window.title('Cursors Certificate Generator')
-window.geometry('700x400')
+window.geometry('700x500')
 
 certificate_label = Label(window, text = 'Template')
 certificate_label.place(x = 50, y = 50, width = 100, height = 50)
@@ -77,13 +88,26 @@ target_dir_entry.place(x = 200, y = 190, width = 300, height = 50)
 target_dir_filedialog = Button(window, text = 'Select', command = lambda :open_dirdialog(target_dir_entry_var))
 target_dir_filedialog.place(x = 550, y = 190, width = 100, height = 50)
 
+mailing_list_label = Label(window, text = 'Mailing List')
+mailing_list_label.place(x = 50, y = 260, width = 100, height = 50)
+
+mailing_list_entry_var = StringVar()
+mailing_list_entry = Entry(window, textvar = mailing_list_entry_var)
+mailing_list_entry.place(x = 200, y = 260, width = 300, height = 50)
+
+mailing_list_filedialog = Button(window, text = 'Select', command = lambda :open_dirdialog(mailing_list_entry_var))
+mailing_list_filedialog.place(x = 550, y = 260, width = 100, height = 50)
+
 set_points_button = Button(window, text = 'Set Points', command = set_points)
-set_points_button.place(x = 250, y = 260, width = 200, height = 50)
+set_points_button.place(x = 250, y = 320, width = 200, height = 50)
 
 generate_button = Button(window, text = 'Generate Certificates', command = generate_certificates)
-generate_button.place(x = 250, y = 300, width = 200, height = 50)
+generate_button.place(x = 250, y = 360, width = 200, height = 50)
+
+email_certificates_button = Button(window, text = 'Email Certificates', command = email_certificates)
+email_certificates_button.place(x = 250, y = 400, width = 200, height = 50)
 
 masthead = Label(window, text = 'Designed & Developed by Ajay Raj Nelapudi')
-masthead.place(x = 200, y = 340, width = 300, height = 50)
+masthead.place(x = 200, y = 450, width = 300, height = 50)
 
 window.mainloop()

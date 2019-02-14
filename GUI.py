@@ -21,12 +21,11 @@ def generate_certificates():
     try:
         global points
         gen = certificates.Certificate_Generator(template, participants)
-        gen.extract_contestants_data(points)
+        gen.set_data_positions(points)
         gen.make_certificates()
         gen.save_all(target_dir)
     except:
-        pass
-        # open a dialog box and display the error message here
+        messagebox.showerror('Status', 'Certificate Generation Failed')
 
     messagebox.showinfo('Status', 'Please check ' + target_dir)
 

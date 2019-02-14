@@ -64,7 +64,7 @@ class Email_Sender:
 
 
 '''
-SAMPLE CALLS
+SAMPLE CALL
 emailer = Email_Sender("/Users/ajayraj/Documents/CSI/CertificateGenerator/Target", "/Users/ajayraj/Documents/CSI/CertificateGenerator/sample.csv")
 emailer.read_id_email()
 emailer.send_all_emails()

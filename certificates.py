@@ -30,8 +30,8 @@ class Certificate_Generator:
         for participant_data in self.phrase_position:
             certificate = cv.imread(self.template_filepath, cv.IMREAD_COLOR)
             for phrase, position in participant_data:
-                size = 2 if len(phrase) < 16 else 1
-                cv.putText(certificate, phrase, position, cv.FONT_HERSHEY_PLAIN, size, (0, 0, 0), 1, cv.LINE_AA)
+                size = 2 #if len(phrase) < 16 else 1
+                cv.putText(certificate, phrase, position, cv.FONT_HERSHEY_SCRIPT_SIMPLEX, size, (0, 0, 0), 1, cv.LINE_AA)
             certificate_filename = participant_data[0][0]
             self.certificates.append([certificate_filename, certificate])
 
@@ -44,12 +44,11 @@ class Certificate_Generator:
         for certificate_filename, certificate in self.certificates:
             cv.imwrite(certificate_filename + ".png", certificate)
 
-        certificate_filenames = [filename for filename, certificate in self.certificates]
+        certificates = [certificate_filename for certificate_filename, certificate_img in self.certificates]
 
         os.chdir(target_dir)
-        certificates = os.listdir(target_dir + "/temp")
-        for filename, certificate in zip(certificate_filenames, certificates):
-            certificate_img = Image.open(target_dir + "/temp/" + certificate)
+        for filename in certificates:
+            certificate_img = Image.open(target_dir + "/temp/" + filename + ".png")
             pdf_bytes = img2pdf.convert(certificate_img.filename)
             certificate_pdf = open(target_dir + "/" + filename + ".pdf", "wb")
             certificate_pdf.write(pdf_bytes)
@@ -57,7 +56,7 @@ class Certificate_Generator:
 
         os.chdir(target_dir + "/temp")
         for file in certificates:
-            os.remove(file)
+            os.remove(file + ".png")
         os.rmdir(target_dir + "/temp")
 
 

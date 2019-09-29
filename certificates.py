@@ -39,12 +39,18 @@ class Certificate_Generator:
         new_position = (position[0] - offset, position[1])
         return new_position
 
+    def capitalize(self, phrase):
+        name = phrase.split()
+        name = [part.capitalize() for part in name]
+        return ' '.join(name)
+
     def make_certificates(self):
         for participant_data in self.phrase_position:
             certificate = cv.imread(self.template_filepath, cv.IMREAD_COLOR)
             for phrase, position in participant_data:
                 size = 1 #if len(phrase) < 16 else 1
-                cv.putText(certificate, phrase, position, cv.FONT_HERSHEY_COMPLEX, size, (0, 0, 0), 1, cv.LINE_AA)
+                capital_phrase = self.capitalize(phrase)
+                cv.putText(certificate, capital_phrase, position, cv.FONT_HERSHEY_COMPLEX, size, (0, 0, 0), 1, cv.LINE_AA)
             certificate_filename = participant_data[0][0]
             self.certificates.append([certificate_filename, certificate])
 

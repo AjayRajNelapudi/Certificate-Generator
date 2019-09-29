@@ -11,7 +11,7 @@ class Email_Sender:
         self.id_email_path = id_email_path
 
         self.email = "ajayraj.cseanits@gmail.com"
-        self.password = "anitscse034"
+        self.password = "ajayraj@gmail"
 
         self.server = smtplib.SMTP('smtp.gmail.com', 587)
         self.server.starttls()
@@ -21,9 +21,15 @@ class Email_Sender:
         mail = MIMEMultipart()
         mail['From'] = self.email
         mail['To'] = to_email_id
-        mail['Subject'] = "***"
+        mail['Subject'] = "Participation Certificate for Ethical Hacking & Cybersecurity Workshop by Spyry at ANITS"
 
-        body = "***"
+        message = ("Dear Student,",
+                "We appreciate your participation in the Ethical Hacking & Cybersecurity Workhop by Spyry at ANITS.",
+                "Please find your participation certificate attached with this email.",
+                "For any discrepencies please email cursors2k19@anits.edu.in",
+                "Regards,",
+                "Cursors2k18 Team.")
+        body = "\n\n".join(message)
 
         mail.attach(MIMEText(body, 'plain'))
 

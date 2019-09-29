@@ -94,7 +94,7 @@ mailing_list_entry_var = StringVar()
 mailing_list_entry = Entry(window, textvar = mailing_list_entry_var)
 mailing_list_entry.place(x = 200, y = 260, width = 300, height = 50)
 
-mailing_list_filedialog = Button(window, text = 'Select', command = lambda :open_dirdialog(mailing_list_entry_var))
+mailing_list_filedialog = Button(window, text = 'Select', command = lambda :open_filedialog(mailing_list_entry_var))
 mailing_list_filedialog.place(x = 550, y = 260, width = 100, height = 50)
 
 set_points_button = Button(window, text = 'Set Points', command = set_points)

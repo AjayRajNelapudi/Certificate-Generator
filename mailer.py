@@ -11,7 +11,7 @@ class Email_Sender:
         self.id_email_path = id_email_path
 
         self.email = "ajayraj.cseanits@gmail.com"
-        self.password = "ajayraj@gmail"
+        self.password = ""
 
         self.server = smtplib.SMTP('smtp.gmail.com', 587)
         self.server.starttls()

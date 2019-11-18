@@ -14,6 +14,7 @@ class Email_Sender:
         self.password = ""
 
         self.server = smtplib.SMTP('smtp.gmail.com', 587)
+        self.server.ehlo()
         self.server.starttls()
         self.server.login(self.email, self.password)
 

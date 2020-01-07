@@ -54,7 +54,7 @@ def open_dirdialog(filepath):
     filepath.set(askdirectory())
 
 window = Tk()
-window.title('Cursors Certificate Generator')
+window.title('Certificate Generator')
 window.geometry('700x500')
 
 certificate_label = Label(window, text = 'Template')

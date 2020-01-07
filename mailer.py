@@ -11,17 +11,21 @@ class Mailer:
         self.target_dir = target_dir
         self.id_email_path = id_email_path
 
-        self.email = "certificates34@gmail.com"
-        self.password = "anitscse@noreply"
+        '''
+        If you have want to add your email to dispatch certificates, change the below code
+        and turn on access to less secure apps at
+        https://myaccount.google.com/lesssecureapps?pli=1
+        '''
+        self.login_email = "certificates34@gmail.com"
+        self.login_password = "anitscse@noreply"
 
         self.server = smtplib.SMTP('smtp.gmail.com', 587)
-        # self.server.ehlo()
         self.server.starttls()
-        self.server.login(self.email, self.password)
+        self.server.login(self.login_email, self.login_password)
 
     def build_and_send(self, to_email_id, certificate_path):
         mail = MIMEMultipart()
-        mail['From'] = self.email
+        mail['From'] = self.login_email
         mail['To'] = to_email_id
         mail['Subject'] = "Participation Certificate for ACM Hour of Code"
 
@@ -49,7 +53,7 @@ class Mailer:
         text = mail.as_string()
         attachment.close()
 
-        self.server.sendmail(self.email, to_email_id, text)
+        self.server.sendmail(self.login_email, to_email_id, text)
 
     def read_id_email(self):
         id_email_file = open(self.id_email_path, "r")

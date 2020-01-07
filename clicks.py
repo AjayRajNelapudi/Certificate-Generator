@@ -1,6 +1,6 @@
 import cv2 as cv
 
-class Mouse_Click_Capture:
+class MouseClickCapture:
     def __init__(self, certificate_template):
         self.certificate_template = certificate_template
         self.points = []

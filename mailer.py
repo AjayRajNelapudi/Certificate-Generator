@@ -4,32 +4,35 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 import csv
+import os
 
-class Email_Sender:
+class Mailer:
     def __init__(self, target_dir, id_email_path):
         self.target_dir = target_dir
         self.id_email_path = id_email_path
 
-        self.email = "ajayraj.cseanits@gmail.com"
-        self.password = ""
+        self.email = "certificates34@gmail.com"
+        self.password = "anitscse@noreply"
 
         self.server = smtplib.SMTP('smtp.gmail.com', 587)
-        self.server.ehlo()
+        # self.server.ehlo()
         self.server.starttls()
         self.server.login(self.email, self.password)
 
-    def send_email(self, to_email_id, certificate_path):
+    def build_and_send(self, to_email_id, certificate_path):
         mail = MIMEMultipart()
         mail['From'] = self.email
         mail['To'] = to_email_id
-        mail['Subject'] = "Participation Certificate for Ethical Hacking & Cybersecurity Workshop by Spyry at ANITS"
+        mail['Subject'] = "Participation Certificate for ACM Hour of Code"
 
-        message = ("Dear Student,",
-                "We appreciate your participation in the Ethical Hacking & Cybersecurity Workhop by Spyry at ANITS.",
-                "Please find your participation certificate attached with this email.",
-                "For any discrepencies please email cursors2k19@anits.edu.in",
-                "Regards,",
-                "Cursors2k18 Team.")
+        message = [
+            "Dear Student,",
+            "We appreciate your participation in the ACM Hour of Code.",
+            "Apologies for the delay. Please find your participation certificate attached with this email.",
+            "For any discrepencies please let us know in the WhatsApp group",
+            "Regards,",
+            "ACM Student Chapter, ANITS."
+        ]
         body = "\n\n".join(message)
 
         mail.attach(MIMEText(body, 'plain'))
@@ -44,6 +47,7 @@ class Email_Sender:
 
         mail.attach(part)
         text = mail.as_string()
+        attachment.close()
 
         self.server.sendmail(self.email, to_email_id, text)
 
@@ -54,25 +58,12 @@ class Email_Sender:
 
     def send_all_emails(self):
         for id, email in self.id_email:
-            certificate_path = self.target_dir + "/" + id + ".pdf"
-            if "@anits.edu.in" in email:#"@" in email and email.index("@") != len(email) - 1:
-                email_id = email[:]
-            else:
-                email_id = email + "@gmail.com"
-
+            certificate_path = os.path.join(self.target_dir ,id + ".pdf")
             try:
-                self.send_email(email_id, certificate_path)
+                self.build_and_send(email, certificate_path)
                 print("Email successfully sent to", email)
             except:
-                print("Email to", email_id, "failed")
+                print("Email to", email, "failed")
 
     def __del__(self):
         self.server.quit()
-
-
-'''
-SAMPLE CALL
-emailer = Email_Sender("/Users/ajayraj/Documents/CSI/CertificateGenerator/Target", "/Users/ajayraj/Documents/CSI/CertificateGenerator/sample.csv")
-emailer.read_id_email()
-emailer.send_all_emails()
-'''

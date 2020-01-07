@@ -1,14 +1,14 @@
 from tkinter import *
 from tkinter import messagebox
 import certificates
-import placetext
+import clicks
 import mailer
 
 points = None
 
 def set_points():
     template = certificate_entry.get()
-    points_capture = placetext.Mouse_Click_Capture(template)
+    points_capture = clicks.MouseClickCapture(template)
     points_capture.capture()
     global points
     points = points_capture.points
@@ -33,7 +33,7 @@ def email_certificates():
     target_dir = target_dir_entry.get()
     mailing_list = mailing_list_entry.get()
 
-    emailer = mailer.Email_Sender(target_dir, mailing_list)
+    emailer = mailer.Mailer(target_dir, mailing_list)
     emailer.read_id_email()
     emailer.send_all_emails()
 

@@ -1,0 +1,6 @@
+2020-01-08 20:33:52,386 DEBUG controller Points Captured. [(1096, 632), (208, 706)]
+2020-01-08 20:33:57,297 DEBUG certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-08 20:33:57,415 DEBUG certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-08 20:34:01,366 DEBUG controller all certificates generated successfully
+2020-01-08 20:34:19,319 DEBUG mailer Email sent to ajayraj.cseanits@gmail.com
+2020-01-08 20:34:32,802 DEBUG controller Emails dispatched successfully

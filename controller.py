@@ -66,7 +66,7 @@ class Controller:
     def config():
         if "logs" not in os.listdir(os.getcwd()):
             os.mkdir("logs")
-        # logging.config.dictConfig(Controller.LOGGING)
+        logging.config.dictConfig(Controller.LOGGING)
         Controller.logger = logging.getLogger("controller")
 
         View.window.protocol('WM_DELETE_WINDOW', Controller.quit)

@@ -10,7 +10,7 @@ class MouseClickCapture:
             self.points.append((x, y + 15))
             cv.line(self.template, (x, y), (x, y + 25), (0, 0, 0), 2)
 
-    def capture(self):
+    def display_template(self):
         self.template = cv.imread(self.certificate_template, cv.IMREAD_COLOR)
         cv.imshow('Template', self.template)
         cv.setMouseCallback('Template', self.capture_clicks)

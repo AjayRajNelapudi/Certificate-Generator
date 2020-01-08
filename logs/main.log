@@ -1,0 +1,33 @@
+2020-01-08 11:08:59,995 DEBUG controller generator failed due to zip argument #2 must support iteration
+2020-01-08 11:10:34,973 DEBUG controller generate_certificates() called before set_points()
+2020-01-08 11:10:45,827 DEBUG controller Points Captured. [(1081, 630), (190, 689)]
+2020-01-08 11:10:50,082 DEBUG certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-08 11:10:50,182 DEBUG certificates temp/Ajay Raj Nelapudi.png converted to pdf
+2020-01-08 11:10:55,021 DEBUG controller all certificates generated successfully
+2020-01-08 11:11:13,277 DEBUG mailer Email sent to ajayraj.cseanits@gmail.com
+2020-01-08 11:11:17,870 DEBUG controller Emails dispatched successfully
+2020-01-08 11:16:03,142 DEBUG controller Points Captured. []
+2020-01-08 11:16:13,910 DEBUG controller generator failed due to list index out of range
+2020-01-08 11:16:25,182 DEBUG controller Points Captured. []
+2020-01-08 11:16:28,841 DEBUG controller generator failed due to list index out of range
+2020-01-08 11:16:38,135 DEBUG controller Points Captured. [(1086, 631), (183, 693)]
+2020-01-08 11:17:45,716 DEBUG certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-08 11:21:40,630 DEBUG controller Points Captured. [(1093, 637), (199, 697)]
+2020-01-08 11:21:42,818 DEBUG certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-08 11:21:42,910 DEBUG certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-08 11:21:52,978 DEBUG controller all certificates generated successfully
+2020-01-08 11:22:10,289 DEBUG mailer Email sent to ajayraj.cseanits@gmail.com
+2020-01-08 11:22:15,023 DEBUG controller Emails dispatched successfully
+2020-01-08 11:28:08,613 DEBUG controller Points Captured. [(1072, 631), (208, 692)]
+2020-01-08 11:28:13,887 DEBUG certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-08 11:28:13,983 DEBUG certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-08 11:28:15,331 DEBUG controller all certificates generated successfully
+2020-01-08 11:34:59,828 DEBUG controller Points Captured. [(1067, 641), (162, 699)]
+2020-01-08 11:36:12,327 DEBUG certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-08 11:36:12,434 DEBUG certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-08 11:42:43,618 DEBUG controller Points Captured. [(1066, 634), (162, 699)]
+2020-01-08 11:42:45,941 DEBUG certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-08 11:42:46,040 DEBUG certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-08 11:42:47,995 DEBUG controller all certificates generated successfully
+2020-01-08 11:43:49,556 DEBUG mailer Email sent to ajayraj.cseanits@gmail.com
+2020-01-08 11:43:53,920 DEBUG controller Emails dispatched successfully

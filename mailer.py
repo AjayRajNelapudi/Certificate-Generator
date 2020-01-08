@@ -1,3 +1,4 @@
+import logging
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -22,6 +23,8 @@ class Mailer:
         self.server = smtplib.SMTP('smtp.gmail.com', 587)
         self.server.starttls()
         self.server.login(self.login_email, self.login_password)
+
+        self.logger = logging.getLogger("mailer")
 
     def build_and_send(self, to_email_id, certificate_path):
         mail = MIMEMultipart()
@@ -56,18 +59,17 @@ class Mailer:
         self.server.sendmail(self.login_email, to_email_id, text)
 
     def read_id_email(self):
-        id_email_file = open(self.id_email_path, "r")
-        self.id_email = list(csv.reader(id_email_file))
-        id_email_file.close()
+        with open(self.id_email_path, "r") as id_email_file:
+            self.id_email = list(csv.reader(id_email_file))
 
     def send_all_emails(self):
         for id, email in self.id_email:
-            certificate_path = os.path.join(self.target_dir ,id + ".pdf")
+            certificate_path = os.path.join(self.target_dir, id + ".pdf")
             try:
                 self.build_and_send(email, certificate_path)
-                print("Email successfully sent to", email)
-            except:
-                print("Email to", email, "failed")
+                self.logger.debug("Email sent to " + email)
+            except Exception as exp:
+                self.logger.debug("Email to " + email + "failed due to " + str(exp))
 
     def __del__(self):
         self.server.quit()

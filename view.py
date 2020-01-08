@@ -3,7 +3,7 @@ from tkinter import *
 class View:
     window = Tk()
     window.title('Certificate Generator')
-    window.geometry('700x500')
+    window.geometry('700x550')
 
     certificate_label = Label(window, text = 'Template')
     certificate_label.place(x = 50, y = 50, width = 100, height = 50)
@@ -55,7 +55,10 @@ class View:
     email_certificates_button.place(x = 250, y = 400, width = 200, height = 50)
 
     masthead = Label(window, text = 'Designed & Developed by Ajay Raj Nelapudi')
-    masthead.place(x = 200, y = 450, width = 300, height = 50)
+    masthead.place(x = 200, y = 480, width = 300, height = 30)
+
+    profile_redirect = Button(window, text = "Visit developer's profile")
+    profile_redirect.place(x = 250, y = 510, width = 200, height = 25)
 
     @staticmethod
     def render():

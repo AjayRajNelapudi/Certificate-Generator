@@ -6,6 +6,7 @@ from tkinter import messagebox
 import logging
 import logging.config
 import os
+import webbrowser
 
 class Controller:
     points = None
@@ -47,15 +48,15 @@ class Controller:
         },
         "loggers": {
             "controller": {
-                "handlers": ["controller", "main"],
+                "handlers": ["controller", "main", "console"],
                 "level": "DEBUG",
             },
             "certificates": {
-                "handlers": ["certificates", "main"],
+                "handlers": ["certificates", "main", "console"],
                 "level": "DEBUG",
             },
             "mailer": {
-                "handlers": ["mailer", "main"],
+                "handlers": ["mailer", "main", "console"],
                 "level": "DEBUG",
             },
         }
@@ -65,7 +66,7 @@ class Controller:
     def config():
         if "logs" not in os.listdir(os.getcwd()):
             os.mkdir("logs")
-        logging.config.dictConfig(Controller.LOGGING)
+        # logging.config.dictConfig(Controller.LOGGING)
         Controller.logger = logging.getLogger("controller")
 
         View.window.protocol('WM_DELETE_WINDOW', Controller.quit)
@@ -76,6 +77,8 @@ class Controller:
         View.set_points_button['command'] = Controller.set_points
         View.generate_button['command'] = Controller.generate_certificates
         View.email_certificates_button['command'] = Controller.email_certificates
+        View.masthead.bind("<Button-1>", lambda e: webbrowser.open("https://ajayrajnelapudi.github.io/"))
+        View.profile_redirect['command'] = lambda: webbrowser.open("https://ajayrajnelapudi.github.io/")
 
     @staticmethod
     def set_points():

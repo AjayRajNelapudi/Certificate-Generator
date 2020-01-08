@@ -7,9 +7,8 @@ setup(
     author='Ajay Raj Nelapudi',
     author_email='ajayraj.cseanits@gmail.com',
     url='https://ajayrajnelapudi.github.io/',
-    install_requires = [
+    install_requires=[
         'opencv-python==3.3.0.10',
         'img2pdf==0.3.3',
-        'tkinter==8.5',
     ]
 )

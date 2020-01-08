@@ -1,2 +1,2 @@
-img2pdf==0.3.3
-opencv-python==3.3.0.10
+opencv-python>=3.3.0.10
+img2pdf>=0.3.3

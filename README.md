@@ -4,9 +4,9 @@ Software brought to life based on the necessity to create and email 300 certific
 INPUT FILES:
 1. Template: An image in .png, .jpg, or .jpeg format, containing the certificate template upon which names will be written.<br>
 2. Participants: A CSV file in which each row represents the data to be printed on each template.<br><br>
-FORMAT:
+FORMAT:<br>
 field1,field2,field3,...,fieldN<br>
-such that field1 is always the name of the candidate.<br><br>
+such that field1 is always the name of the candidate.<br><
 
 EXAMPLE:<br>
 Ajay Raj Nelapudi,IV/IV - CSE - A<br>
@@ -14,11 +14,11 @@ Shreya Gokavarapu,IV/IV - IT - A<br><br>
 
 3. Target dir: The directory where all the certificates should be saved in.<br>
 4. Mailing List: A CSV file in which each row consists of the name and email address of each participant.<br><br>
-FORMAT:
+FORMAT:<br>
 name,email<br>
 the name should match the name at field1 in participants<br>
 
-EXAMPLE:
+EXAMPLE:<br>
 Ajay Raj Nelapudi,ajayraj.cseanits@gmail.com<br>
 Shreya Gokavarapu,shreya.gokavarapu@gmail.com<br><br><br>
 

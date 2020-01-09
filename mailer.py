@@ -19,10 +19,14 @@ class Mailer:
         https://myaccount.google.com/lesssecureapps?pli=1
         '''
         self.login_email = "certificates34@gmail.com"
-        self.login_password = "anitscse@noreply"
+        self.login_password = ""
 
         self.server = smtplib.SMTP('smtp.gmail.com', 587)
         self.server.starttls()
+
+        if self.login_password == "":
+            raise ValueError("Password might have been removed for security concerns. Please add password")
+
         self.server.login(self.login_email, self.login_password)
 
         self.logger = logging.getLogger("mailer")
@@ -31,8 +35,11 @@ class Mailer:
         mail = MIMEMultipart()
         mail['From'] = self.login_email
         mail['To'] = to_email_id
+
+        # Change subject of email here
         mail['Subject'] = "Participation Certificate for ACM Hour of Code"
 
+        # Change body of email here
         message = [
             "Dear Student,",
             "We appreciate your participation in the ACM Hour of Code.",

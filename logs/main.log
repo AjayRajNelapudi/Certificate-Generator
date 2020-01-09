@@ -4,3 +4,20 @@
 2020-01-08 20:34:01,366 DEBUG controller all certificates generated successfully
 2020-01-08 20:34:19,319 DEBUG mailer Email sent to ajayraj.cseanits@gmail.com
 2020-01-08 20:34:32,802 DEBUG controller Emails dispatched successfully
+2020-01-09 08:08:27,468 DEBUG controller Points Captured. [(1088, 636), (165, 698)]
+2020-01-09 08:08:30,279 DEBUG certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-09 08:08:30,375 DEBUG certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-09 08:08:32,105 DEBUG controller all certificates generated successfully
+2020-01-09 08:08:59,041 DEBUG controller mailer failed due to (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials j8sm5079865pfe.182 - gsmtp')
+2020-01-09 08:10:34,307 DEBUG controller Points Captured. [(1090, 632), (169, 692)]
+2020-01-09 08:10:37,337 DEBUG certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-09 08:10:37,429 DEBUG certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-09 08:10:39,460 DEBUG controller all certificates generated successfully
+2020-01-09 08:11:17,384 DEBUG mailer Email sent to ajayraj.cseanits@gmail.com
+2020-01-09 08:11:30,653 DEBUG controller Emails dispatched successfully
+2020-01-09 08:15:12,483 INFO controller Points Captured. [(847, 604), (164, 687)]
+2020-01-09 08:15:28,366 INFO certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-09 08:15:28,461 INFO certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-09 08:15:30,268 INFO controller all certificates generated successfully
+2020-01-09 08:17:37,194 INFO controller Points Captured. [(867, 622), (237, 696)]
+2020-01-09 08:17:39,293 INFO certificates Ajay Raj Nelapudi's certificate created successfullly

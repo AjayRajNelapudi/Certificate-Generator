@@ -67,9 +67,9 @@ class Mailer:
             certificate_path = os.path.join(self.target_dir, id + ".pdf")
             try:
                 self.build_and_send(email, certificate_path)
-                self.logger.debug("Email sent to " + email)
+                self.logger.info("Email sent to " + email)
             except Exception as exp:
-                self.logger.debug("Email to " + email + "failed due to " + str(exp))
+                self.logger.info("Email to " + email + "failed due to " + str(exp))
 
     def __del__(self):
         self.server.quit()

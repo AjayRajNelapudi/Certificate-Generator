@@ -13,7 +13,7 @@ class Controller:
     logger = None
     LOGGING = {
         "version": 1,
-        "disable_existing_loggers": False,
+        "disable_existing_loggers": True,
         "formatters": {
             "default": {
                 "format": "%(asctime)s %(levelname)s %(name)s %(message)s"
@@ -49,15 +49,15 @@ class Controller:
         "loggers": {
             "controller": {
                 "handlers": ["controller", "main", "console"],
-                "level": "DEBUG",
+                "level": "INFO",
             },
             "certificates": {
                 "handlers": ["certificates", "main", "console"],
-                "level": "DEBUG",
+                "level": "INFO",
             },
             "mailer": {
                 "handlers": ["mailer", "main", "console"],
-                "level": "DEBUG",
+                "level": "INFO",
             },
         }
     }
@@ -87,7 +87,7 @@ class Controller:
         points_capture.display_template()
         Controller.points = points_capture.points
 
-        Controller.logger.debug("Points Captured. " + str(Controller.points))
+        Controller.logger.info("Points Captured. " + str(Controller.points))
 
     @staticmethod
     def generate_certificates():
@@ -96,7 +96,7 @@ class Controller:
                 "Operational Error",
                 "Please set points before generating certificates."
             )
-            Controller.logger.debug("generate_certificates() called before set_points()")
+            Controller.logger.info("generate_certificates() called before set_points()")
             return
 
         template = View.certificate_entry.get()
@@ -110,10 +110,10 @@ class Controller:
             generator.save_all(target_dir)
 
             messagebox.showinfo("Certificates Generated", "Please check " + target_dir)
-            Controller.logger.debug("all certificates generated successfully")
+            Controller.logger.info("all certificates generated successfully")
         except Exception as exp:
             messagebox.showerror("Generator Failed", str(exp))
-            Controller.logger.debug("generator failed due to " + str(exp))
+            Controller.logger.info("generator failed due to " + str(exp))
 
     @staticmethod
     def email_certificates():
@@ -129,10 +129,10 @@ class Controller:
                 "Mailer Info",
                 "Emails dispatched successfully. Check your sent box."
             )
-            Controller.logger.debug("Emails dispatched successfully")
+            Controller.logger.info("Emails dispatched successfully")
         except Exception as exp:
             messagebox.showerror("Mailer Failed", str(exp))
-            Controller.logger.debug("mailer failed due to " + str(exp))
+            Controller.logger.info("mailer failed due to " + str(exp))
 
     @staticmethod
     def open_filedialog(filepath):

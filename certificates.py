@@ -60,9 +60,9 @@ class CertificateGenerator:
                 certificate_filename = participant_data[0][0]
                 self.certificates.append([certificate_filename, certificate])
 
-                self.logger.debug(certificate_filename + "'s certificate created successfullly")
+                self.logger.info(certificate_filename + "'s certificate created successfullly")
             except Exception as exp:
-                self.logger.debug(participant_data[0][0] + "'s certificate creation failed due to " + str(exp))
+                self.logger.info(participant_data[0][0] + "'s certificate creation failed due to " + str(exp))
 
     def prepare_dirs(self, target_dir):
         os.chdir(target_dir)
@@ -85,9 +85,9 @@ class CertificateGenerator:
                 with open(os.path.join(target_dir, filename + ".pdf"), "wb") as certificate_pdf:
                     certificate_pdf.write(pdf_bytes)
 
-                self.logger.debug(filename + ".png converted to pdf")
+                self.logger.info(filename + ".png converted to pdf")
             except Exception as exp:
-                self.logger.debug(filename + ".png conversion to pdf failed due to " + str(exp))
+                self.logger.info(filename + ".png conversion to pdf failed due to " + str(exp))
 
     def clean_dir(self, target_dir):
         temp_dir = os.path.join(target_dir, "temp")

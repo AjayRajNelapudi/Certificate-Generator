@@ -13,10 +13,9 @@ Shiv Shankar Singh,IV/IV - CSE - A<br>
 
 3. Target dir: The directory where all the certificates should be saved in.<br>
 4. Mailing List: A CSV file in which each row consists of the name and email address of each participant.<br><br>
-**FORMAT**:<br>
+**FORMAT**:
 name,email<br>
 The name should match the name at field1 in participants.
-
 **EXAMPLE**:<br>
 Ajay Raj Nelapudi,ajayraj.cseanits@gmail.com<br>
 Shiv Shankar Singh,shivshankarsingh@gmail.com<br><br><br>

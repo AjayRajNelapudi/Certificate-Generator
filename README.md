@@ -1,5 +1,5 @@
 # Certificate-Generator
-Software brought to life based on the necessity to create and email 300 certificates to students, for the Spyry Workshop held at ANITS college.
+Software brought to life based on the necessity to create and email 300 certificates to students, for the Spyry Workshop held at ANITS college, as a part of Cursors 2k19.
 
 ### Inputs:
 1. Template: An image in .png, .jpg, or .jpeg format, containing the certificate template upon which names will be written.<br>

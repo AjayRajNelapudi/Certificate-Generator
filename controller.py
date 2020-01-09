@@ -7,6 +7,7 @@ import logging
 import logging.config
 import os
 import webbrowser
+import traceback
 
 class Controller:
     points = None
@@ -49,15 +50,15 @@ class Controller:
         },
         "loggers": {
             "controller": {
-                "handlers": ["controller", "main", "console"],
+                "handlers": ["controller", "main"],
                 "level": "INFO",
             },
             "certificates": {
-                "handlers": ["certificates", "main", "console"],
+                "handlers": ["certificates", "main"],
                 "level": "INFO",
             },
             "mailer": {
-                "handlers": ["mailer", "main", "console"],
+                "handlers": ["mailer", "main"],
                 "level": "INFO",
             },
         }
@@ -119,12 +120,14 @@ class Controller:
             generator.make_certificates()
             generator.save_all(target_dir)
 
-            Controller.certificates_genrated = True
+            Controller.certificates_generated = True
             messagebox.showinfo("Certificates Generated", "Please check " + target_dir)
             Controller.logger.info("all certificates generated successfully")
         except Exception as exp:
-            messagebox.showerror("Generator Failed", str(exp))
-            Controller.logger.info("generator failed due to " + str(exp))
+            exception = ''.join(traceback.format_exception(etype=type(exp), value=exp, tb=exp.__traceback__))
+            Controller.logger.info("generator failed due to the following reason")
+            Controller.logger.info(exception)
+            messagebox.showerror("Unknown exception in generator", exception)
 
     @staticmethod
     def email_certificates():
@@ -150,8 +153,10 @@ class Controller:
             )
             Controller.logger.info("Emails dispatched successfully")
         except Exception as exp:
-            messagebox.showerror("Mailer Failed", str(exp))
-            Controller.logger.info("mailer failed due to " + str(exp))
+            exception = ''.join(traceback.format_exception(etype=type(exp), value=exp, tb=exp.__traceback__))
+            Controller.logger.info("mailer failed due to the following reason")
+            Controller.logger.info(exception)
+            messagebox.showerror("Unknown exception in mailer", exception)
 
     @staticmethod
     def open_filedialog(filepath):

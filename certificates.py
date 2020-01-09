@@ -6,6 +6,7 @@ from PIL import Image
 from contextlib import suppress
 import shutil
 import logging
+import traceback
 
 class CertificateGenerator:
     def __init__(self, template_filepath, contestants_filepath):
@@ -20,7 +21,7 @@ class CertificateGenerator:
             contestant_records = list(csv.reader(contestants_file))
 
         for record in contestant_records:
-            phrase_position = [(attribute, self.center_align_attribute_poistion(attribute, position)) for attribute, position in zip(record, positions)]
+            phrase_position = [[attribute, self.center_align_attribute_poistion(attribute, position)] for attribute, position in zip(record, positions)]
             self.phrase_position.append(phrase_position)
 
     def center_align_attribute_poistion(self, word, position):
@@ -62,7 +63,9 @@ class CertificateGenerator:
 
                 self.logger.info(certificate_filename + "'s certificate created successfullly")
             except Exception as exp:
-                self.logger.info(participant_data[0][0] + "'s certificate creation failed due to " + str(exp))
+                exception = ''.join(traceback.format_exception(etype=type(exp), value=exp, tb=exp.__traceback__))
+                self.logger.info(participant_data[0][0] + "'s certificate creation failed due to the following exception")
+                self.logger.info(exception)
 
     def prepare_dirs(self, target_dir):
         os.chdir(target_dir)
@@ -87,7 +90,9 @@ class CertificateGenerator:
 
                 self.logger.info(filename + ".png converted to pdf")
             except Exception as exp:
-                self.logger.info(filename + ".png conversion to pdf failed due to " + str(exp))
+                exception = ''.join(traceback.format_exception(etype=type(exp), value=exp, tb=exp.__traceback__))
+                self.logger.info(filename + ".png conversion to pdf failed due to the following exception")
+                self.logger.info(exception)
 
     def clean_dir(self, target_dir):
         temp_dir = os.path.join(target_dir, "temp")

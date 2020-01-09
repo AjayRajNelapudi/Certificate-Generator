@@ -1,20 +1,57 @@
-2020-01-08 20:33:52,386 DEBUG controller Points Captured. [(1096, 632), (208, 706)]
-2020-01-08 20:34:01,366 DEBUG controller all certificates generated successfully
-2020-01-08 20:34:32,802 DEBUG controller Emails dispatched successfully
-2020-01-09 08:08:27,468 DEBUG controller Points Captured. [(1088, 636), (165, 698)]
-2020-01-09 08:08:32,105 DEBUG controller all certificates generated successfully
-2020-01-09 08:08:59,041 DEBUG controller mailer failed due to (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials j8sm5079865pfe.182 - gsmtp')
-2020-01-09 08:10:34,307 DEBUG controller Points Captured. [(1090, 632), (169, 692)]
-2020-01-09 08:10:39,460 DEBUG controller all certificates generated successfully
-2020-01-09 08:11:30,653 DEBUG controller Emails dispatched successfully
-2020-01-09 08:15:12,483 INFO controller Points Captured. [(847, 604), (164, 687)]
-2020-01-09 08:15:30,268 INFO controller all certificates generated successfully
-2020-01-09 08:17:37,194 INFO controller Points Captured. [(867, 622), (237, 696)]
-2020-01-09 08:20:35,897 INFO controller Points Captured. [(878, 650), (182, 696)]
-2020-01-09 08:24:18,160 INFO controller Points Captured. [(1072, 634), (207, 695)]
-2020-01-09 08:24:21,519 INFO controller all certificates generated successfully
-2020-01-09 08:24:41,169 INFO controller Emails dispatched successfully
-2020-01-09 10:09:42,321 INFO controller Empty template
-2020-01-09 10:10:22,568 INFO controller Empty template
-2020-01-09 10:10:33,557 INFO controller mailer failed due to [Errno 2] No such file or directory: ''
-2020-01-09 10:14:24,503 INFO controller email_certificates() called before generate_certificates()
+2020-01-09 20:13:42,136 INFO controller Points Captured. [(864, 637), (262, 707)]
+2020-01-09 20:13:46,378 INFO controller all certificates generated successfully
+2020-01-09 20:13:59,410 INFO controller mailer failed due to the following reason
+2020-01-09 20:13:59,414 INFO controller Traceback (most recent call last):
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/controller.py", line 146, in email_certificates
+    mailer = Mailer(target_dir, mailing_list)
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/mailer.py", line 26, in __init__
+    self.server.login(self.login_email, self.login_password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 730, in login
+    raise last_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 721, in login
+    initial_response_ok=initial_response_ok)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 642, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials z30sm8736685pfq.154 - gsmtp')
+
+2020-01-09 20:19:18,575 INFO controller Points Captured. [(909, 617), (242, 680)]
+2020-01-09 20:19:36,927 INFO controller all certificates generated successfully
+2020-01-09 20:19:45,272 INFO controller mailer failed due to the following reason
+2020-01-09 20:19:45,272 INFO controller Traceback (most recent call last):
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/controller.py", line 146, in email_certificates
+    mailer = Mailer(target_dir, mailing_list)
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/mailer.py", line 26, in __init__
+    self.server.login(self.login_email, self.login_password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 730, in login
+    raise last_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 721, in login
+    initial_response_ok=initial_response_ok)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 642, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials o7sm8969227pfg.138 - gsmtp')
+
+2020-01-09 20:23:43,261 INFO controller Points Captured. []
+2020-01-09 20:24:28,456 INFO controller Points Captured. []
+2020-01-09 20:27:49,089 INFO controller Points Captured. []
+2020-01-09 20:27:55,965 INFO controller generate_certificates() called before set_points()
+2020-01-09 20:27:59,238 INFO controller generate_certificates() called before set_points()
+2020-01-09 20:28:42,794 INFO controller Points Captured. [(1079, 635), (193, 697)]
+2020-01-09 20:28:49,764 INFO controller all certificates generated successfully
+2020-01-09 20:28:57,771 INFO controller mailer failed due to the following reason
+2020-01-09 20:28:57,771 INFO controller Traceback (most recent call last):
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/controller.py", line 146, in email_certificates
+    mailer = Mailer(target_dir, mailing_list)
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/mailer.py", line 26, in __init__
+    self.server.login(self.login_email, self.login_password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 730, in login
+    raise last_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 721, in login
+    initial_response_ok=initial_response_ok)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 642, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials q6sm8291660pfh.127 - gsmtp')
+
+2020-01-09 20:30:59,719 INFO controller Points Captured. [(920, 632), (245, 695)]
+2020-01-09 20:31:04,553 INFO controller email_certificates() called before generate_certificates()
+2020-01-09 20:31:07,319 INFO controller all certificates generated successfully
+2020-01-09 20:31:30,190 INFO controller Emails dispatched successfully

@@ -6,6 +6,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 import csv
 import os
+import traceback
 
 class Mailer:
     def __init__(self, target_dir, id_email_path):
@@ -69,7 +70,9 @@ class Mailer:
                 self.build_and_send(email, certificate_path)
                 self.logger.info("Email sent to " + email)
             except Exception as exp:
-                self.logger.info("Email to " + email + "failed due to " + str(exp))
+                exception = ''.join(traceback.format_exception(etype=type(exp), value=exp, tb=exp.__traceback__))
+                self.logger.info("Email to " + email + "failed due to the following exception")
+                self.logger.info(exception)
 
     def __del__(self):
         self.server.quit()

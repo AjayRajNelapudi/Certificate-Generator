@@ -2,7 +2,7 @@
 Software brought to life based on the necessity to create and email 300 certificates to students, for the Spyry Workshop held at ANITS college, as a part of Cursors 2k19.
 
 ### Inputs:
-1. Template: An image in .png, .jpg, or .jpeg format, containing the certificate template upon which names will be written.<br>
+1. Template: An image in .png, .jpg, or .jpeg format, containing the certificate template upon which names will be written.
 2. Participants: A CSV file in which each row represents the data to be printed on each template.  
 **Format**:<br>
 field1,field2,field3,...,fieldN<br>
@@ -11,7 +11,7 @@ Such that field1 is always the name of the candidate.
 Ajay Raj Nelapudi,IV/IV - CSE - A<br>
 Shiv Shankar Singh,IV/IV - CSE - A<br>
 
-3. Target dir: The directory where all the certificates should be saved in.<br>
+3. Target dir: The directory where all the certificates should be saved in.
 4. Mailing List: A CSV file in which each row consists of the name and email address of each participant.  
 **Format**:<br>
 name,email<br>

@@ -13,7 +13,7 @@ Shiv Shankar Singh,IV/IV - CSE - A<br>
 
 3. Target dir: The directory where all the certificates should be saved in.<br>
 4. Mailing List: A CSV file in which each row consists of the name and email address of each participant.<br><br>
-**FORMAT**:
+**FORMAT**:<br>
 name,email<br>
 The name should match the name at field1 in participants.
 **EXAMPLE**:<br>
@@ -23,4 +23,4 @@ Shiv Shankar Singh,shivshankarsingh@gmail.com<br><br><br>
 The log files log usual activity and exceptions that rise during runtime. Please do not modify the log files in any manner.<br>
 In case of any issues please email me a screenshot of the issue along with the main.log file.<br><br>
 
-If you found my project useful please star my repository. Thank you.
+If you found my project useful, please star my repository.

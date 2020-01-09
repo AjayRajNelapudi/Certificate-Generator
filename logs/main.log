@@ -21,3 +21,15 @@
 2020-01-09 08:15:30,268 INFO controller all certificates generated successfully
 2020-01-09 08:17:37,194 INFO controller Points Captured. [(867, 622), (237, 696)]
 2020-01-09 08:17:39,293 INFO certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-09 08:20:35,897 INFO controller Points Captured. [(878, 650), (182, 696)]
+2020-01-09 08:20:39,673 INFO certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-09 08:24:18,160 INFO controller Points Captured. [(1072, 634), (207, 695)]
+2020-01-09 08:24:20,086 INFO certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-09 08:24:20,184 INFO certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-09 08:24:21,519 INFO controller all certificates generated successfully
+2020-01-09 08:24:37,831 INFO mailer Email sent to ajayraj.cseanits@gmail.com
+2020-01-09 08:24:41,169 INFO controller Emails dispatched successfully
+2020-01-09 10:09:42,321 INFO controller Empty template
+2020-01-09 10:10:22,568 INFO controller Empty template
+2020-01-09 10:10:33,557 INFO controller mailer failed due to [Errno 2] No such file or directory: ''
+2020-01-09 10:14:24,503 INFO controller email_certificates() called before generate_certificates()

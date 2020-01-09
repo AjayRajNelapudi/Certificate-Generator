@@ -11,6 +11,7 @@ import webbrowser
 class Controller:
     points = None
     logger = None
+    certificates_generated = False
     LOGGING = {
         "version": 1,
         "disable_existing_loggers": True,
@@ -83,10 +84,19 @@ class Controller:
     @staticmethod
     def set_points():
         template = View.certificate_entry.get()
+        if template == None or template == '':
+            messagebox.showwarning(
+                "Operational Error",
+                "Please select the template before setting points."
+            )
+            Controller.logger.info('Empty template')
+            return
+
         points_capture = MouseClickCapture(template)
         points_capture.display_template()
         Controller.points = points_capture.points
 
+        Controller.certificates_generated = False
         Controller.logger.info("Points Captured. " + str(Controller.points))
 
     @staticmethod
@@ -109,6 +119,7 @@ class Controller:
             generator.make_certificates()
             generator.save_all(target_dir)
 
+            Controller.certificates_genrated = True
             messagebox.showinfo("Certificates Generated", "Please check " + target_dir)
             Controller.logger.info("all certificates generated successfully")
         except Exception as exp:
@@ -117,6 +128,14 @@ class Controller:
 
     @staticmethod
     def email_certificates():
+        if not Controller.certificates_generated:
+            messagebox.showerror(
+                "Operational Error",
+                "Certificates not generated yet."
+            )
+            Controller.logger.info("email_certificates() called before generate_certificates()")
+            return
+
         target_dir = View.target_dir_entry.get()
         mailing_list = View.mailing_list_entry.get()
 

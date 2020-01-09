@@ -18,7 +18,11 @@ name,email<br>
 The name should match the name at field1 in participants.  
 **Example**:<br>
 Ajay Raj Nelapudi,ajayraj.cseanits@gmail.com<br>
-Shiv Shankar Singh,shivshankarsingh@gmail.com<br><br><br>
+Shiv Shankar Singh,shivshankarsingh@gmail.com<br><br>
+
+### Outputs:
+1. Certificates in .pdf format will be generated and saved at the dir given in target dir field.
+2. Emails will be sent to the the address given in the mailing list.
 
 The log files log usual activity and exceptions that rise during runtime. Please do not modify the log files in any manner.<br>
 In case of any issues please email me a screenshot of the issue along with the main.log file.<br><br>

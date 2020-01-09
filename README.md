@@ -9,7 +9,7 @@ field1,field2,field3,...,fieldN<br>
 Such that field1 is always the name of the candidate.  
 **Example**:<br>
 Ajay Raj Nelapudi,IV/IV - CSE - A<br>
-Shiv Shankar Singh,IV/IV - CSE - A<br>
+Shiv Shankar Singh,IV/IV - CSE - A
 
 3. Target dir: The directory where all the certificates should be saved in.
 4. Mailing List: A CSV file in which each row consists of the name and email address of each participant.  

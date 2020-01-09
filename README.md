@@ -6,11 +6,11 @@ INPUT FILES:
 2. Participants: A CSV file in which each row represents the data to be printed on each template.<br><br>
 FORMAT:<br>
 field1,field2,field3,...,fieldN<br>
-such that field1 is always the name of the candidate.<br><
+such that field1 is always the name of the candidate.<br>
 
 EXAMPLE:<br>
 Ajay Raj Nelapudi,IV/IV - CSE - A<br>
-Shreya Gokavarapu,IV/IV - IT - A<br><br>
+Shreya Gokavarapu,IV/IV - IT - A<br>
 
 3. Target dir: The directory where all the certificates should be saved in.<br>
 4. Mailing List: A CSV file in which each row consists of the name and email address of each participant.<br><br>

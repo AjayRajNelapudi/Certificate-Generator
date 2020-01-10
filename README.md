@@ -37,9 +37,14 @@ Shiv Shankar Singh,shivshankarsingh@gmail.com<br><br>
 
 ### Outputs:
 1. Certificates in .pdf format will be generated and saved at the dir given in target dir field.<br>
-2. Emails will be sent to the the address given in the mailing list.
+2. Emails will be sent to the the address given in the mailing list.<br><br>
 
-The log files log usual activity and exceptions that rise during runtime. Please do not modify the log files in any manner.<br>
-In case of any issues please email me a screenshot of the issue along with the main.log file.<br><br>
+### Instructions to change email:
+1. When creating the email-config.json file, please add your credentials accordingly.
+2. Login to the same email account in your browser and visit [https://myaccount.google.com/lesssecureapps?pli=1](https://myaccount.google.com/lesssecureapps?pli=1)
+3. Turn on **Allow less secure apps** as shown below.
+![Helper Image](https://content.screencast.com/users/ajayraj_anits/folders/Jing/media/3a863393-3b2d-4fed-b563-fc8c9c5c517a/00000402.png)
 
-If you found my project useful, please star my repository.
+You should be able to send the certificates from your desired email account now.
+
+For any problems during usage, please raise an issue at [Github issues](https://github.com/AjayRajNelapudi/Certificate-Generator/issues)

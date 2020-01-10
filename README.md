@@ -13,7 +13,21 @@ Ajay Raj Nelapudi,IV/IV - CSE - A<br>
 Shiv Shankar Singh,IV/IV - CSE - A
 
 3. Target dir: The directory where all the certificates should be saved in.
-4. Mailing List: A CSV file in which each row consists of the name and email address of each participant.  
+4. Email Config: A JSON file in the following format.
+```
+{
+    'credentials': {
+        'login_email': 'youremailaddress@gmail.com',
+        'login_password': 'yourpassword'
+    },
+
+    'mail': {
+        'subject': 'Email subject',
+        'body': 'Email body'
+    }
+}
+```
+5. Mailing List: A CSV file in which each row consists of the name and email address of each participant.
 **Format**:<br>
 name,email<br>
 The name should match the name at field1 in participants.  

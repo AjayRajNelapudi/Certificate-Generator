@@ -7,6 +7,7 @@ from contextlib import suppress
 import shutil
 import logging
 import traceback
+from utils import remove_empty_lists
 
 class CertificateGenerator:
     def __init__(self, template_filepath, contestants_filepath):
@@ -45,7 +46,7 @@ class CertificateGenerator:
         return ' '.join(name)
 
     def make_certificates(self):
-        for participant_data in self.phrase_position:
+        for participant_data in remove_empty_lists(self.phrase_position):
             try:
                 certificate = cv.imread(self.template_filepath, cv.IMREAD_COLOR)
                 first_column = True

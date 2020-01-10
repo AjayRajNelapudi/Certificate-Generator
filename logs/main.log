@@ -64,3 +64,118 @@ smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepte
 2020-01-09 20:31:07,319 INFO controller all certificates generated successfully
 2020-01-09 20:31:23,623 INFO mailer Email sent to ajayraj.cseanits@gmail.com
 2020-01-09 20:31:30,190 INFO controller Emails dispatched successfully
+2020-01-10 08:30:21,201 INFO controller Points Captured. [(900, 639), (216, 703)]
+2020-01-10 08:30:23,451 INFO certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-10 08:30:23,546 INFO certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-10 08:30:25,508 INFO controller all certificates generated successfully
+2020-01-10 08:30:49,206 INFO controller mailer failed due to the following reason
+2020-01-10 08:30:49,206 INFO controller Traceback (most recent call last):
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/controller.py", line 146, in email_certificates
+    mailer = Mailer(target_dir, mailing_list)
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/mailer.py", line 26, in __init__
+    self.server.starttls()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 771, in starttls
+    server_hostname=self._host)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/ssl.py", line 401, in wrap_socket
+    _context=self, _session=session)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/ssl.py", line 808, in __init__
+    self.do_handshake()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/ssl.py", line 1061, in do_handshake
+    self._sslobj.do_handshake()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/ssl.py", line 683, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:748)
+
+2020-01-10 08:31:35,654 INFO controller mailer failed due to the following reason
+2020-01-10 08:31:35,654 INFO controller Traceback (most recent call last):
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/controller.py", line 146, in email_certificates
+    mailer = Mailer(target_dir, mailing_list)
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/mailer.py", line 29, in __init__
+    self.server.starttls()
+ValueError: Password might have been removed for security concerns. Please add password
+
+2020-01-10 08:32:37,603 INFO controller Points Captured. [(886, 623), (138, 689)]
+2020-01-10 08:32:40,138 INFO certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-10 08:32:40,233 INFO certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-10 08:32:42,405 INFO controller all certificates generated successfully
+2020-01-10 08:34:03,761 INFO mailer Email sent to ajayraj.cseanits@gmail.com
+2020-01-10 08:34:10,817 INFO controller Emails dispatched successfully
+2020-01-10 08:57:22,122 INFO controller Points Captured. [(1086, 638), (195, 693)]
+2020-01-10 08:57:23,960 INFO certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-10 08:57:24,073 INFO certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-10 08:57:26,111 INFO controller all certificates generated successfully
+2020-01-10 08:57:27,912 INFO controller mailer failed due to the following reason
+2020-01-10 08:57:27,913 INFO controller Traceback (most recent call last):
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/controller.py", line 150, in email_certificates
+    mailer = Mailer(target_dir, email_config, mailing_list)
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/mailer.py", line 23, in __init__
+    self.login_email = self.email_config['credentials']['loginemail']
+KeyError: 'loginemail'
+
+2020-01-10 08:58:37,677 INFO controller Points Captured. [(932, 628), (221, 689)]
+2020-01-10 08:58:39,394 INFO certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-10 08:58:39,517 INFO certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-10 08:58:41,274 INFO controller all certificates generated successfully
+2020-01-10 09:00:55,957 INFO controller mailer failed due to the following reason
+2020-01-10 09:00:55,958 INFO controller Traceback (most recent call last):
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/controller.py", line 150, in email_certificates
+    mailer = Mailer(target_dir, email_config, mailing_list)
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/mailer.py", line 32, in __init__
+    self.server.login(self.login_email, self.login_password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 730, in login
+    raise last_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 721, in login
+    initial_response_ok=initial_response_ok)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 642, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials t137sm391501pgb.40 - gsmtp')
+
+2020-01-10 09:03:17,349 INFO controller Points Captured. [(906, 634), (230, 685)]
+2020-01-10 09:03:19,304 INFO certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-10 09:03:19,402 INFO certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-10 09:03:21,061 INFO controller all certificates generated successfully
+2020-01-10 09:05:43,466 INFO controller mailer failed due to the following reason
+2020-01-10 09:05:43,466 INFO controller Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 387, in getreply
+    line = self.file.readline(_MAXLINE + 1)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+TimeoutError: [Errno 60] Operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/controller.py", line 150, in email_certificates
+    mailer = Mailer(target_dir, email_config, mailing_list)
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/mailer.py", line 30, in __init__
+    self.server.starttls()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 749, in starttls
+    self.ehlo_or_helo_if_needed()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 600, in ehlo_or_helo_if_needed
+    if not (200 <= self.ehlo()[0] <= 299):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 441, in ehlo
+    (code, msg) = self.getreply()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 391, in getreply
+    + str(e))
+smtplib.SMTPServerDisconnected: Connection unexpectedly closed: [Errno 60] Operation timed out
+
+2020-01-10 09:08:25,565 INFO controller Points Captured. [(926, 643), (190, 705)]
+2020-01-10 09:08:27,212 INFO certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-10 09:08:27,307 INFO certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-10 09:08:28,987 INFO controller all certificates generated successfully
+2020-01-10 09:09:59,832 INFO controller mailer failed due to the following reason
+2020-01-10 09:09:59,832 INFO controller Traceback (most recent call last):
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/controller.py", line 150, in email_certificates
+    mailer = Mailer(target_dir, email_config, mailing_list)
+  File "/Users/ajayraj/Documents/GitHub/Certificate-Generator/mailer.py", line 32, in __init__
+    self.server.login(self.login_email, self.login_password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 730, in login
+    raise last_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 721, in login
+    initial_response_ok=initial_response_ok)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 642, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials g22sm393553pgk.85 - gsmtp')
+
+2020-01-10 09:13:29,939 INFO mailer Email sent to ajayraj.cseanits@gmail.com
+2020-01-10 09:13:32,400 INFO controller Emails dispatched successfully

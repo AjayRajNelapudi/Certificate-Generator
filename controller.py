@@ -8,6 +8,7 @@ import logging.config
 import os
 import webbrowser
 import traceback
+from utils import format_config
 
 class Controller:
     points = None
@@ -75,6 +76,7 @@ class Controller:
         View.certificate_filedialog['command'] = lambda: Controller.open_filedialog(View.certificate_entry_var)
         View.participants_filedialog['command'] = lambda: Controller.open_filedialog(View.participants_entry_var)
         View.target_dir_filedialog['command'] = lambda: Controller.open_dirdialog(View.target_dir_entry_var)
+        View.email_config_filedialog['command'] = lambda: Controller.open_filedialog(View.email_config_entry_var)
         View.mailing_list_filedialog['command'] = lambda: Controller.open_filedialog(View.mailing_list_entry_var)
         View.set_points_button['command'] = Controller.set_points
         View.generate_button['command'] = Controller.generate_certificates
@@ -140,10 +142,12 @@ class Controller:
             return
 
         target_dir = View.target_dir_entry.get()
+        email_config = View.email_config_entry.get()
         mailing_list = View.mailing_list_entry.get()
 
+        email_config = format_config(email_config)
         try:
-            mailer = Mailer(target_dir, mailing_list)
+            mailer = Mailer(target_dir, email_config, mailing_list)
             mailer.read_id_email()
             mailer.send_all_emails()
 

@@ -1,3 +1,4 @@
+from utils import remove_empty_lists
 import logging
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -9,8 +10,9 @@ import os
 import traceback
 
 class Mailer:
-    def __init__(self, target_dir, id_email_path):
+    def __init__(self, target_dir, email_config, id_email_path):
         self.target_dir = target_dir
+        self.email_config = email_config
         self.id_email_path = id_email_path
 
         '''
@@ -18,14 +20,14 @@ class Mailer:
         and turn on access to less secure apps at
         https://myaccount.google.com/lesssecureapps?pli=1
         '''
-        self.login_email = "certificates34@gmail.com"
-        self.login_password = ""
+        self.login_email = self.email_config['credentials']['login_email']
+        self.login_password = self.email_config['credentials']['login_password']
+
+        if self.login_password == "":
+            raise ValueError("Password might have been removed for security concerns. Please add the password.")
 
         self.server = smtplib.SMTP('smtp.gmail.com', 587)
         self.server.starttls()
-
-        if self.login_password == "":
-            raise ValueError("Password might have been removed for security concerns. Please add password")
 
         self.server.login(self.login_email, self.login_password)
 
@@ -37,18 +39,10 @@ class Mailer:
         mail['To'] = to_email_id
 
         # Change subject of email here
-        mail['Subject'] = "Participation Certificate for ACM Hour of Code"
+        mail['Subject'] = self.email_config['mail']['subject']
 
         # Change body of email here
-        message = [
-            "Dear Student,",
-            "We appreciate your participation in the ACM Hour of Code.",
-            "Apologies for the delay. Please find your participation certificate attached with this email.",
-            "For any discrepencies please let us know in the WhatsApp group",
-            "Regards,",
-            "ACM Student Chapter, ANITS."
-        ]
-        body = "\n\n".join(message)
+        body = self.email_config['mail']['body']
 
         mail.attach(MIMEText(body, 'plain'))
 
@@ -71,7 +65,7 @@ class Mailer:
             self.id_email = list(csv.reader(id_email_file))
 
     def send_all_emails(self):
-        for id, email in self.id_email:
+        for id, email in remove_empty_lists(self.id_email):
             certificate_path = os.path.join(self.target_dir, id + ".pdf")
             try:
                 self.build_and_send(email, certificate_path)

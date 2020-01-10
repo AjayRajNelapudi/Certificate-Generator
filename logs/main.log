@@ -179,3 +179,9 @@ smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepte
 
 2020-01-10 09:13:29,939 INFO mailer Email sent to ajayraj.cseanits@gmail.com
 2020-01-10 09:13:32,400 INFO controller Emails dispatched successfully
+2020-01-10 09:25:22,746 INFO controller Points Captured. [(511, 327), (513, 409)]
+2020-01-10 09:25:24,487 INFO certificates Ajay Raj Nelapudi's certificate created successfullly
+2020-01-10 09:25:24,542 INFO certificates Ajay Raj Nelapudi.png converted to pdf
+2020-01-10 09:25:26,615 INFO controller all certificates generated successfully
+2020-01-10 09:27:08,799 INFO mailer Email sent to ajayraj.cseanits@gmail.com
+2020-01-10 09:27:10,940 INFO controller Emails dispatched successfully

@@ -33,7 +33,9 @@ name,email<br>
 The name should match the name at field1 in participants.  
 **Example**:<br>
 Ajay Raj Nelapudi,ajayraj.cseanits@gmail.com<br>
-Shiv Shankar Singh,shivshankarsingh@gmail.com<br><br>
+Shiv Shankar Singh,shivshankarsingh@gmail.com<br>
+
+_For proper examples, please view the files in sample_inputs directory_
 
 ### Outputs:
 1. Certificates in .pdf format will be generated and saved at the dir given in target dir field.<br>

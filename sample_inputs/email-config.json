@@ -1,0 +1,11 @@
+{
+	"credentials": {
+		"login_email": "certificates34@gmail.com",
+		"login_password": "anitscse@noreply"
+	},
+
+	"mail": {
+		"subject": "Participation Certificate",
+		"body": "Thank you for your Participation"
+	}
+}

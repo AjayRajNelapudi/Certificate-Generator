@@ -49,7 +49,8 @@ _For proper examples, please view the files in sample_inputs directory_
 
 You should be able to send the certificates from your desired email account now.
 
-For any problems during usage, please raise an issue at [Github issues](https://github.com/AjayRajNelapudi/Certificate-Generator/issues).
+For any problems during usage, please raise an issue at [Github issues](https://github.com/AjayRajNelapudi/Certificate-Generator/issues).<br>
+Make sure you add main.log file and describe which steps led to the issue.
 
 
 **To avoid any conflicts, please read the LICENSE and follow accordingly.**

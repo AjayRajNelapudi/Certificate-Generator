@@ -47,4 +47,7 @@ Shiv Shankar Singh,shivshankarsingh@gmail.com<br><br>
 
 You should be able to send the certificates from your desired email account now.
 
-For any problems during usage, please raise an issue at [Github issues](https://github.com/AjayRajNelapudi/Certificate-Generator/issues)
+For any problems during usage, please raise an issue at [Github issues](https://github.com/AjayRajNelapudi/Certificate-Generator/issues).
+
+
+**To avoid any conflicts, please read the LICENSE and follow accordingly.**

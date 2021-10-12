@@ -8,7 +8,7 @@ setup(
     author_email='ajayraj.cseanits@gmail.com',
     url='https://ajayrajnelapudi.github.io/',
     install_requires=[
-        'opencv-python==3.3.0.10',
+        'opencv-python==3.4.0.12',
         'img2pdf==0.3.3',
     ]
 )
